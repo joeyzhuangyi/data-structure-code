@@ -28,13 +28,13 @@ btree* left_rotate(btree* root){
 	return new_root;
 
 }
-Btree splay(Btree node, int item){
-    if(node == NULL)return NULL;
+Btree insert_splay(Btree node, int item){
+    if(node == NULL)return // create a new node;
     if(node->item == item) return node;
 
     if(node->item > item){
     // left of the current root
-        if( node->left == NULL)return root;
+        if( node->left == NULL)return //create new
         if( root->left->item > item){
             // LL case
             root->left->left = splay(root->left->left,item);
@@ -47,7 +47,7 @@ Btree splay(Btree node, int item){
         // now that the element is left next to the node
         return right_rotate(root);
     }else ( node->item < item){
-        if( node->right == NULL)return root;
+        if( node->right == NULL)return // create new node
         if( root->right->item < item){
             // RR case
             root->right->right = splay(root->right->right,item);
